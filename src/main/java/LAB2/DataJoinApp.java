@@ -4,7 +4,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.FileOutputFormat;
 import org.apache.hadoop.mapred.TextInputFormat;
-
+import org.apache.hadoop.mapred.lib.MultipleInputs;
 
 import java.io.IOException;
 
