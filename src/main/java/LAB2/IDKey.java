@@ -4,6 +4,10 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Mapper;
 
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
 public class IDKey implements WritableComparable<IDKey> {
     private Integer airportId;
     private boolean isFlight;
