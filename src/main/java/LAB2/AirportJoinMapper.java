@@ -10,6 +10,7 @@ import org.apache.hadoop.mapred.join.TupleWritable;
 import java.io.IOException;
 
 public class AirportJoinMapper extends Mapper<LongWritable, TupleWritable, LongWritable, Text> {
+    
     public void map(LongWritable key, TupleWritable value, OutputCollector<LongWritable, Text> output, Reporter reporter) throws IOException {
         LongWritable airportCode = (LongWritable) value.get(0);
         Text airportName = (Text) value.get(1);
