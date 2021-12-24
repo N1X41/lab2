@@ -2,7 +2,6 @@ package LAB2;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
-import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.DataInput;
 import java.io.DataOutput;
