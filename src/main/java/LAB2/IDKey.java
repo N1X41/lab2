@@ -44,5 +44,9 @@ public class IDKey implements WritableComparable<IDKey> {
 
     @Override
     public int compareTo(IDKey obj) {
+        int c = this.airportId.compareTo(obj.airportId);
+        if (c == 0) {
+
+        }
     }
 }
