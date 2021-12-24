@@ -10,6 +10,8 @@ import org.apache.hadoop.mapred.join.TupleWritable;
 import java.io.IOException;
 
 public class FlightJoinMapper extends Mapper<LongWritable, TupleWritable, LongWritable, FloatWritable> {
+    
+
     public void map(LongWritable key, TupleWritable value, OutputCollector<LongWritable, FloatWritable> output, Reporter reporter) throws IOException {
         LongWritable airportCode = (LongWritable) value.get(10);
         FloatWritable delay = (FloatWritable) value.get(17);
