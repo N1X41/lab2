@@ -10,6 +10,6 @@ public class DataJoinApp {
         }
 
         JobConf conf = new JobConf(JoinJob.class);
-        
+
     }
 }

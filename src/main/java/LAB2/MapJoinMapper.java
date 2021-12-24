@@ -1,2 +1,4 @@
-package LAB2;public class MapJoinMapper {
+package LAB2;
+
+public class MapJoinMapper {
 }
