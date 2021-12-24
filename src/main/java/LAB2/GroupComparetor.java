@@ -1,4 +1,4 @@
 package LAB2;
 
-public class GroupComparetor {
+public class GroupComparetor extends GroupCo {
 }
