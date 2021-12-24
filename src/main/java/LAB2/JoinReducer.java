@@ -1,2 +1,4 @@
-package LAB2;public class JoinReducer {
+package LAB2;
+
+public class JoinReducer {
 }
