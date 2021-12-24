@@ -1,6 +1,6 @@
 package LAB2;
 
-import org.apache.hadoop.mapred.JobConf;
+
 
 public class DataJoinApp {
     public static void main(String[] args){
