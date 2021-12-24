@@ -10,7 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 public class DataJoinApp {
-    public static void main(String[] args){
+    public static void main(String[] args)throws IOException, ClassNotFoundException, InterruptedException{
         if (args.length != 3) {
             System.err.println("Usage: DataJoinApp <input file_1> <input file_2> <output path>");
             System.exit(-1);
