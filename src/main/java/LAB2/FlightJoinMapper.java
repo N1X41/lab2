@@ -16,7 +16,7 @@ public class FlightJoinMapper extends Mapper<LongWritable, Text, IDKey, String> 
         if (!key.equals(new LongWritable(0))) {
             String[] columns = value.toString().split(",");
             Integer airportId = Integer.parseInt(columns[AIRPORT_CODE_COLUMN_NUMBER]);
-            String delay = new columns[DELAY_COLUMN_NUMBER];
+            String delay = columns[DELAY_COLUMN_NUMBER];
             context.write(new IDKey(airportId, true, value), delay);
         }
     }
