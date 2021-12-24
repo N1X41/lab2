@@ -27,16 +27,7 @@ public class JoinReducer extends Reducer<IDKey, Text, Text, Text>{
             avg /= (float) count;
         }
         if (count > 0) {
-            StringBuilder builder = new StringBuilder();
-            builder.append("Name: ");
-            builder.append("\"" + name + "\"");
-            builder.append(", min: ");
-            builder.append(min);
-            builder.append(", max: ");
-            builder.append(max);
-            builder.append(", avg: ");
-            builder.append(avg);
-            //String res = "Name: " + name + ", min: " + min + ", max: " + max + ", avg: " + avg;
+            String res = "Name: " + name + ", min: " + min + ", max: " + max + ", avg: " + avg;
             System.out.println(builder.toString());
             context.write(new Text(key.getAirportId().toString()), new Text(builder.toString()));
         }
