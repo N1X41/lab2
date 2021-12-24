@@ -1,2 +1,4 @@
-package LAB2;public class StringTools {
+package LAB2;
+
+public class StringTools {
 }
