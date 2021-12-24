@@ -35,7 +35,9 @@ public class IDKey implements WritableComparable<IDKey> {
     }
 
     @Override
-    public void readFields(){
+    public void readFields(DataInput in) throws IOException {
+        airportId = in.readInt();
+        isFlight = in.readBoolean();
     }
 
     @Override
