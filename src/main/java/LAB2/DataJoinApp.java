@@ -2,8 +2,9 @@ package LAB2;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.*;
-import org.apache.hadoop.mapred.join.CompositeInputFormat;
+import org.apache.hadoop.mapred.FileOutputFormat;
+import org.apache.hadoop.mapred.TextInputFormat;
+
 
 import java.io.IOException;
 
@@ -14,6 +15,6 @@ public class DataJoinApp {
             System.exit(-1);
         }
 
-        
+
     }
 }
