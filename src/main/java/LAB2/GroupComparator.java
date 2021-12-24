@@ -4,7 +4,7 @@ import org.apache.hadoop.io.WritableComparator;
 import org.apache.hadoop.io.WritableComparable;
 
 public class GroupComparator extends WritableComparator {
-    public GroupComparator() {
+    protected GroupComparator() {
         super(IDKey.class, true);
     }
 
