@@ -9,5 +9,13 @@ import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reporter;
 import org.apache.hadoop.mapred.join.TupleWritable;
 
-public class AirportJoinMapper extends MapReduceBase implements Mapper<LongWritable, TupleWritable, LongWritable, FloatWritable> {
+import java.io.IOException;
+
+public class AirportJoinMapper extends MapReduceBase implements Mapper<LongWritable, TupleWritable, LongWritable, Text> {
+    @Override
+    public void map(LongWritable key, TupleWritable value, OutputCollector<LongWritable, FloatWritable> output, Reporter reporter) throws IOException {
+        LongWritable airportCode = (LongWritable) value.get(10);
+        FloatWritable delay = (FloatWritable) value.get(17);
+        output.collect(airportCode, delay);
+    }
 }
