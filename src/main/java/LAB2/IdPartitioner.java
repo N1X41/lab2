@@ -1,2 +1,4 @@
-package LAB2;public class IdPartitioner {
+package LAB2;
+
+public class IdPartitioner {
 }
