@@ -24,6 +24,10 @@ public class IDKey implements WritableComparable<IDKey> {
         return airportId;
     }
 
+    public Boolean getFlight() {
+        return isFlight;
+    }
+
     @Override
     public void write(DataOutput out) throws IOException {
         out.writeInt(airportId);
