@@ -13,6 +13,6 @@ public class GroupComparator extends WritableComparator {
         IDKey key1 = (IDKey) wc1;
         IDKey key2 = (IDKey) wc2;
 
-        return key1.compareTo(key2);
+        return Integer.compare(key1.getAirportId(), key2.getAirportId());
     }
 }
