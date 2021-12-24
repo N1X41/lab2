@@ -9,7 +9,7 @@ public class GroupComparator extends WritableComparator {
     }
 
     @Override
-    public int compare(WritableComparable){
-        
+    public int compare(WritableComparable wc1, WritableComparable wc2){
+
     }
 }
