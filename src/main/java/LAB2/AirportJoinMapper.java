@@ -1,2 +1,4 @@
-package LAB2;public class AirportJoinMapper {
+package LAB2;
+
+public class AirportJoinMapper {
 }
