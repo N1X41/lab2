@@ -8,5 +8,7 @@ public class DataJoinApp {
             System.err.println("Usage: DataJoinApp <input file_1> <input file_2> <output path>");
             System.exit(-1);
         }
+
+        JobConf
     }
 }
