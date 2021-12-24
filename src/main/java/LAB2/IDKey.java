@@ -45,4 +45,9 @@ public class IDKey implements WritableComparable<IDKey> {
         result = prime * result + ((airportId == null) ? 0 : airportId.hashCode());
         return result;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+
+    }
 }
