@@ -1,2 +1,4 @@
-package LAB2;public class IDKey {
+package LAB2;
+
+public class IDKey {
 }
