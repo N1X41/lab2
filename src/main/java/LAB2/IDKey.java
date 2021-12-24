@@ -10,6 +10,7 @@ import java.io.IOException;
 public class IDKey implements WritableComparable<IDKey> {
     private Integer airportId;
     private Text data;
+    private boolean
 
     public IDKey(Integer airportId, Text data) {
         super();
