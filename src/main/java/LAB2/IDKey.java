@@ -46,7 +46,7 @@ public class IDKey implements WritableComparable<IDKey> {
     public int compareTo(IDKey obj) {
         int c = this.airportId.compareTo(obj.airportId);
         if (c == 0) {
-            Boolean b = new Boolean(false);
+            return this.isFlight.compareTo(obj.isFlight);
         }
     }
 }
