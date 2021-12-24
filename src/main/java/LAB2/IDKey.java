@@ -36,4 +36,9 @@ public class IDKey implements WritableComparable<IDKey> {
         airportId = in.readInt();
         data = new Text(in.readLine());
     }
+
+    @Override
+    public int hashCode() {
+
+    }
 }
