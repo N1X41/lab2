@@ -1,6 +1,5 @@
 package LAB2;
 
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
