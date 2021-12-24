@@ -1,2 +1,4 @@
-package LAB2;public class GroupComparetor {
+package LAB2;
+
+public class GroupComparetor {
 }
