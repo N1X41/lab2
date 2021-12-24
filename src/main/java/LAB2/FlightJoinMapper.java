@@ -13,5 +13,8 @@ public class FlightJoinMapper extends Mapper<LongWritable, Text, IDKey, Text> {
     private static final int AIRPORT_CODE_COLUMN_NUMBER = 10;
     private static final int DELAY_COLUMN_NUMBER = 17;
 
-    
+    @Override
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+        
+    }
 }
