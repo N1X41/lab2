@@ -9,9 +9,9 @@ public class GroupComparator extends WritableComparator {
     }
 
     @Override
-    public int compare(WritableComparable wc1, WritableComparable wc2){
-        IDKey ke1 = (IDKey)wc1;
-        IDKey ke2 = (IDKey)wc2;
+    public int compare(WritableComparable wc1, WritableComparable wc2) {
+        IDKey ke1 = (IDKey) wc1;
+        IDKey ke2 = (IDKey) wc2;
 
         return key1.getAirportId().compareTo(key2.getAirportId());
     }
