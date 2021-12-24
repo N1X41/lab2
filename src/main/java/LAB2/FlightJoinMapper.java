@@ -21,6 +21,11 @@ public class FlightJoinMapper extends Mapper<LongWritable, TupleWritable, IDKey,
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+
+    }
+
+    @Override
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
         Pattern ptr = Pattern.compile(PATTERN);
         Matcher matcher = ptr.matcher(line);
