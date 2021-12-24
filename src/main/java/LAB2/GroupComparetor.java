@@ -1,4 +1,6 @@
 package LAB2;
 
-public class GroupComparetor extends GroupCo {
+import org.apache.hadoop.io.WritableComparator;
+
+public class GroupComparator extends WritableComparator {
 }
