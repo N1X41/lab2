@@ -9,6 +9,7 @@ import java.io.IOException;
 public class FlightJoinMapper extends Mapper<LongWritable, Text, IDKey, Text> {
     private static final int AIRPORT_CODE_COLUMN_NUMBER = 14;
     private static final int DELAY_COLUMN_NUMBER = 18;
+    private static final boolean FLIGHT_FLAG = true;
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
