@@ -16,4 +16,24 @@ public class IDKey implements WritableComparable<IDKey> {
         this.airportId = airportId;
         this.data = data;
     }
+
+    public Integer getAirportId() {
+        return airportId;
+    }
+
+    public Text getData() {
+        return data;
+    }
+
+    @Override
+    public void write(DataOutput out) throws IOException {
+        out.writeInt(airportId);
+        out.writeChars(data.toString());
+    }
+
+    @Override
+    public void readFields(DataInput in) throws IOException {
+        airportId = in.readInt();
+        data = new Text(in.readLine());
+    }
 }
