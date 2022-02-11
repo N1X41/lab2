@@ -6,6 +6,7 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+
 import org.apache.spark.api.java.function.PairFunction;
 import scala.Tuple2;
 
@@ -47,10 +48,6 @@ public class FlightApp {
                 return new Tuple2<>(new Tuple2<>(new LongWritable(originAirportCode), new LongWritable(destAirportCode)),
                         new FlightData(Float.parseFloat(delay), ABORTED_FLIGHT_FLAG));
             }
-        };
-
-        JavaPairRDD<Tuple2<LongWritable, LongWritable>, FlightData> airportFlightsUniqueKeyData = new JavaPairRDD<Tuple2<LongWritable, LongWritable>, FlightData>(){
-
         };
 
         SparkConf conf = new SparkConf().setAppName("lab3");
