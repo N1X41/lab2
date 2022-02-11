@@ -52,8 +52,9 @@ public class FlightApp {
 
         Function2<FlightData, FlightData, FlightData> airportFlightsUniqueKeyData = new Function2<FlightData, FlightData, FlightData>() {
             @Override
-            public FlightData call(FlightData flightData, FlightData flightData2){
-                return null;
+            public FlightData call(FlightData fd1, FlightData fd2){
+                float d1 = fd1.getDelay(), d2 = fd2.getDelay();
+                float newDelay = d1 > d2 ? d1 : d2;
             }
         };
 
