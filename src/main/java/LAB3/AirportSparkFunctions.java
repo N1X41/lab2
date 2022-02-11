@@ -17,6 +17,7 @@ public class AirportSparkFunctions {
     private static final boolean ABORTED_FLIGHT_FLAG = true;
     private static final boolean NOT_ABORTED_FLIGHT_FLAG = false;
 
+    public AirportSparkFunctions
     public static PairFunction<String, LongWritable, Text> airportNamesKeyData = new PairFunction<String, LongWritable, Text>() {
         @Override
         public Tuple2<LongWritable, Text> call(String line) {
