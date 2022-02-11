@@ -15,7 +15,7 @@ public class AirportSparkFunctions {
     private static final int DELAY_COLUMN_NUMBER = 18;
     private static final boolean ABORTED_FLIGHT_FLAG = true;
     private static final boolean NOT_ABORTED_FLIGHT_FLAG = false;
-
+    private static final String AIRPORT_NAME_FILE_FIRST_LINE = "code";
     private static final String AIRPORT_FLIGHT_FILE_FIRST_LINE = "year";
 
     public AirportSparkFunctions(){}
@@ -23,7 +23,6 @@ public class AirportSparkFunctions {
     public static Function<String, Boolean> filterFunction = new Function<String, Boolean>() {
         @Override
         public Boolean call(String s) {
-
         }
     };
 
