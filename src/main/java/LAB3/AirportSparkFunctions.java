@@ -24,13 +24,11 @@ public class AirportSparkFunctions {
     public static Function<Tuple2<LongWritable, Text>, Boolean> removeFirstLine =
             (Function<Tuple2<LongWritable, Text>, Boolean>) e -> e._1.get() != 0;
 
-    public static PairFunction<Tuple2<LongWritable, Text>, Long, String> airportNamesKeyData =
-            new PairFunction<Tuple2<LongWritable, Text>, Long, String>() {
-        @Override
-        public Tuple2<Long, String> call(Tuple2<LongWritable, Text> line) {
-            String[] columns = StringTools.splitWithCommas(line._2.toString());
-            long airportCode = Long.parseLong(StringTools.removeQuotes(columns[AIRPORT_CODE_COLUMN_NUMBER]));
-            String airportName = StringTools.concatWords(columns, 1, columns.length);
+    public static PairFunction<Tuple2<LongWritable, Text>, Long, String> parseAirportFile =
+            (PairFunction<Tuple2<LongWritable, Text>, Long, String>) line -> {
+                String[] columns = StringTools.splitWithCommas(line._2.toString());
+                long airportCode = Long.parseLong(StringTools.removeQuotes(columns[AIRPORT_CODE_COLUMN_NUMBER]));
+                String airportName = StringTools.concatWords(columns, 1, columns.length);
             return new Tuple2<>(airportCode, airportName);
         }
     };
