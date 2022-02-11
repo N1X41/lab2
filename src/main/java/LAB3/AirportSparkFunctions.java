@@ -7,6 +7,8 @@ import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
+import java.util.Map;
+
 public class AirportSparkFunctions {
     private static final int AIRPORT_CODE_COLUMN_NUMBER = 0;
     private static final int ORIGIN_AIRPORT_COLUMN_NUMBER = 11;
