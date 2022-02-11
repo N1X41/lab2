@@ -66,8 +66,8 @@ public class AirportSparkFunctions {
                 return new Tuple2<>(new Tuple2<>(originAirportCode, destAirportCode),
                         new FlightData(Float.parseFloat(delay), NOT_ABORTED_FLIGHT_FLAG));
             }
-            airportFlightsFileCount++;
-            return null;
+            return new Tuple2<>(new Tuple2<>(originAirportCode, destAirportCode),
+                    new FlightData(Float.parseFloat(delay), ABORTED_FLIGHT_FLAG));
         }
     };
 
