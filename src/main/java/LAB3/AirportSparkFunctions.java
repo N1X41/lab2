@@ -21,15 +21,15 @@ public class AirportSparkFunctions {
 
     public AirportSparkFunctions(){}
 
-    public static PairFunction<String, LongWritable, Text> airportNamesKeyData =
-            new PairFunction<String, LongWritable, Text>() {
+    public static PairFunction<String, Long, String> airportNamesKeyData =
+            new PairFunction<String, Long, String>() {
         @Override
-        public Tuple2<LongWritable, Text> call(String line) {
+        public Tuple2<Long, String> call(String line) {
             if (airportNamesFileCount != 0) {
                 String[] columns = StringTools.splitWithCommas(line);
-                LongWritable airportCode =
-                        new LongWritable(Integer.parseInt(StringTools.removeQuotes(columns[AIRPORT_CODE_COLUMN_NUMBER])));
-                Text airportName = new Text(StringTools.concatWords(columns, 1, columns.length));
+                long airportCode =
+                        (long)(Integer.parseInt(StringTools.removeQuotes(columns[AIRPORT_CODE_COLUMN_NUMBER])));
+                String airportName = StringTools.concatWords(columns, 1, columns.length);
                 return new Tuple2<>(airportCode, airportName);
             }
             airportNamesFileCount++;
