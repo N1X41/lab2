@@ -40,7 +40,7 @@ public class FlightApp {
                 Integer destAirportCode = Integer.parseInt(StringTools.removeQuotes(columns[DEST_AIRPORT_COLUMN_NUMBER]));
                 String delay = columns[DELAY_COLUMN_NUMBER];
                 if(!delay.isEmpty()){
-
+                    
                 }
             }
         };
