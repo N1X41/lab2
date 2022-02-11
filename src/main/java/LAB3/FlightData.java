@@ -15,7 +15,6 @@ public class FlightData implements Serializable {
             delayedFlightCount = 0;
         }
         else {
-            if(delay )
         }
     }
 }
