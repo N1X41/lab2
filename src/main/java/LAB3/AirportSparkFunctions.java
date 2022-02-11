@@ -23,7 +23,7 @@ public class AirportSparkFunctions {
 
     public AirportSparkFunctions(){}
 
-    public static Function<String, Boolean> filterFunction = new Function<String, Boolean>() {
+    public static Function<Tuple2<LongWritable, Text>, Boolean> filterFunction = new Function<Tuple2<LongWritable, Text>, Boolean>() {
         @Override
         public Boolean call(String s) {
             String fw = StringTools.splitWithCommas(s)[0].toLowerCase();
