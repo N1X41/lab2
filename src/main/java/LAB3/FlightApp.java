@@ -22,9 +22,9 @@ public class FlightApp {
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaPairRDD<LongWritable, Text> flightInfoRDD = sc.hadoopFile(args[0], TextInputFormat.class, LongWritable.class, Text.class);
         JavaPairRDD<LongWritable, Text> airportInfoRDD = sc.hadoopFile(args[1], TextInputFormat.class, LongWritable.class, Text.class);
-        JavaPairRDD<Tuple2<Long, Long>, FlightData> airportInfoPairRDD = airportInfoRDD
+        JavaPairRDD<Tuple2<Long, String>, FlightData> airportInfoPairRDD = airportInfoRDD
                 .filter(AirportSparkFunctions.removeFirstLine)
-                .mapToPair(AirportSparkFunctions.parseFlightsFile);
+                .mapToPair(AirportSparkFunctions.parseAirportFile);
         final Broadcast<Map<Long, String>> airportInfoBroadcasted = sc.broadcast(airportInfoPairRDD.collectAsMap());
         JavaPairRDD<String, String> result = flightInfoRDD
                 .filter(AirportSparkFunctions.removeFirstLine)
