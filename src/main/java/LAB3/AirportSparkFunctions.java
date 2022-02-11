@@ -57,5 +57,5 @@ public class AirportSparkFunctions {
         }
     };
 
-    
+    public static PairFunction<Tuple2<Tuple2<LongWritable, LongWritable>, FlightData>, String, String> getAirportResultData (Broadcast<Map<LongWritable, Text>> airportInfoBroadcasted)
 }
