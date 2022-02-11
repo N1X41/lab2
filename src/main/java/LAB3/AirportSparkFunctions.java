@@ -47,7 +47,7 @@ public class AirportSparkFunctions {
                 long destAirportCode = Long.parseLong(StringTools.removeQuotes(columns[DEST_AIRPORT_COLUMN_NUMBER]));
                 String delay = columns[DELAY_COLUMN_NUMBER];
                 if (!delay.isEmpty()) {
-                    return new Tuple2<>(new Tuple2<>(new LongWritable(originAirportCode), new LongWritable(destAirportCode)),
+                    return new Tuple2<>(new Tuple2<>(originAirportCode, destAirportCode),
                             new FlightData(Float.parseFloat(delay), NOT_ABORTED_FLIGHT_FLAG));
                 }
 
