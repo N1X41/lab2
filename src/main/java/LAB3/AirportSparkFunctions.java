@@ -7,7 +7,12 @@ import org.apache.spark.api.java.function.PairFunction;
 import scala.Tuple2;
 
 public class AirportSparkFunctions {
-    
+    private static final int AIRPORT_CODE_COLUMN_NUMBER = 0;
+    private static final int ORIGIN_AIRPORT_COLUMN_NUMBER = 11;
+    private static final int DEST_AIRPORT_COLUMN_NUMBER = 14;
+    private static final int DELAY_COLUMN_NUMBER = 18;
+    private static final boolean ABORTED_FLIGHT_FLAG = true;
+    private static final boolean NOT_ABORTED_FLIGHT_FLAG = false;
 
     PairFunction<String, LongWritable, Text> airportNamesKeyData = new PairFunction<String, LongWritable, Text>() {
         @Override
