@@ -16,6 +16,8 @@ public class AirportSparkFunctions {
     private static final int DELAY_COLUMN_NUMBER = 18;
     private static final boolean ABORTED_FLIGHT_FLAG = true;
     private static final boolean NOT_ABORTED_FLIGHT_FLAG = false;
+    private static int airportNamesFileCount = 0;
+    private static int airportFlightsFileCount = 0;
 
     public AirportSparkFunctions(){}
 
