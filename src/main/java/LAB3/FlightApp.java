@@ -27,10 +27,10 @@ public class FlightApp {
                 .mapToPair(AirportSparkFunctions.parseFlightsFile);
         final Broadcast<Map<Long, String>> airportInfoBroadcasted = sc.broadcast(airportInfoPairRDD.collectAsMap());
         JavaPairRDD<String, String> result = flightInfoRDD
-                .filter(AirportTools.removeFirstLine)
-                .mapToPair(AirportTools.parseFlightsFile)
-                .reduceByKey(AirportTools.groupByKey)
-                .mapToPair(AirportTools.getFlightResultData(airportInfoBroadcasted));
+                .filter(AirportSparkFunctions.removeFirstLine)
+                .mapToPair(AirportSparkFunctions.parseFlightsFile)
+                .reduceByKey(AirportSparkFunctions.groupByKey)
+                .mapToPair(AirportSparkFunctions.getFlightResultData(airportInfoBroadcasted));
         result.saveAsTextFile(args[2]);
     }
 }
