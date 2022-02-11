@@ -1,5 +1,6 @@
 package LAB3;
 
+import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.broadcast.Broadcast;
@@ -14,8 +15,8 @@ public class AirportSparkFunctions {
     private static final int DELAY_COLUMN_NUMBER = 18;
     private static final boolean ABORTED_FLIGHT_FLAG = true;
     private static final boolean NOT_ABORTED_FLIGHT_FLAG = false;
-    private static int airportNamesFileCount = 0;
-    private static int airportFlightsFileCount = 0;
+    private static int airportNamesLinesFileCount = 0;
+    private static int airportFlightsLinesFileCount = 0;
 
     public AirportSparkFunctions(){}
 
