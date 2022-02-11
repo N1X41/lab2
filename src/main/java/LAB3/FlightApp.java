@@ -7,7 +7,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
 import scala.Tuple2;
 
-
+import java.util.Map;
 
 public class FlightApp {
     public static void main(String[] args) {
