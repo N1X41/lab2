@@ -1,2 +1,4 @@
-package LAB3;public class AirportSparkFunctions {
+package LAB3;
+
+public class AirportSparkFunctions {
 }
