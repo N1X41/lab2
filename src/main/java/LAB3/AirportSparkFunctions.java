@@ -29,9 +29,8 @@ public class AirportSparkFunctions {
                 String[] columns = StringTools.splitWithCommas(line._2.toString());
                 long airportCode = Long.parseLong(StringTools.removeQuotes(columns[AIRPORT_CODE_COLUMN_NUMBER]));
                 String airportName = StringTools.concatWords(columns, 1, columns.length);
-            return new Tuple2<>(airportCode, airportName);
-        }
-    };
+                return new Tuple2<>(airportCode, airportName);
+            };
 
     public static PairFunction<Tuple2<LongWritable, Text>, Tuple2<Long, Long>, FlightData> airportFlightsKeyData =
             new PairFunction<Tuple2<LongWritable, Text>, Tuple2<Long, Long>, FlightData>() {
