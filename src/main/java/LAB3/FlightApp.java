@@ -1,2 +1,4 @@
-package LAB3;public class FlightApp {
+package LAB3;
+
+public class FlightApp {
 }
