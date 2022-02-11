@@ -16,4 +16,5 @@ public class FlightApp {
         JavaRDD<String> flightInfoRDD = sc.textFile(args[0]);
         JavaRDD<String> airportInfoRDD = sc.textFile(args[1]);
     }
+    
 }
