@@ -1,5 +1,6 @@
 package LAB3;
 
+import org.apache.hadoop.io.LongWritable;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -12,7 +13,7 @@ public class FlightApp {
             System.exit(-1);
         }
 
-        PairFunction<>
+        PairFunction<LongWritable, Text>
 
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
