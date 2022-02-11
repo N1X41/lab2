@@ -46,15 +46,13 @@ public class AirportSparkFunctions {
                         new FlightData(ZERO, ABORTED_FLIGHT_FLAG));
             };
 
-    public static Function2<FlightData, FlightData, FlightData> airportFlightsUniqueKeyData =
-            new Function2<FlightData, FlightData, FlightData>() {
-        @Override
-        public FlightData call(FlightData fd1, FlightData fd2){
-            float d1 = fd1.getDelay(), d2 = fd2.getDelay();
-            float newDelay = d1 > d2 ? d1 : d2;
-            int afc1 = fd1.getAbortedFlightCount(), afc2 = fd2.getAbortedFlightCount();
-            int dfc1 = fd1.getDelayedFlightCount(), dfc2 = fd2.getDelayedFlightCount();
-            int fc1 = fd1.getFlightCount(), fc2 = fd2.getFlightCount();
+    public static Function2<FlightData, FlightData, FlightData> groupByKey =
+            (Function2<FlightData, FlightData, FlightData>) (fd1, fd2) -> {
+                float d1 = fd1.getDelay(), d2 = fd2.getDelay();
+                float newDelay = d1 > d2 ? d1 : d2;
+                int afc1 = fd1.getAbortedFlightCount(), afc2 = fd2.getAbortedFlightCount();
+                int dfc1 = fd1.getDelayedFlightCount(), dfc2 = fd2.getDelayedFlightCount();
+                int fc1 = fd1.getFlightCount(), fc2 = fd2.getFlightCount();
 
             return new FlightData(newDelay, afc1 + afc2, dfc1 + dfc2, fc1 + fc2);
         }
