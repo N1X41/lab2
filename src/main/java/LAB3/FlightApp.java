@@ -20,7 +20,7 @@ public class FlightApp {
             public Tuple2 call(Object o) throws Exception {
                 return null;
             }
-        }
+        };
 
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
