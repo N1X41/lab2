@@ -25,17 +25,13 @@ public class AirportSparkFunctions {
 
     public static Function<Tuple2<LongWritable, Text>, Boolean> filterFunction = new Function<Tuple2<LongWritable, Text>, Boolean>() {
         @Override
-        public Boolean call(String s) {
-            String fw = StringTools.splitWithCommas(s)[0].toLowerCase();
-            return !(fw.equals(AIRPORT_FLIGHT_FILE_FIRST_LINE) || fw.equals(AIRPORT_NAME_FILE_FIRST_LINE));
-            public Boolean call(Tuple2<LongWritable, Text> e) {
+        public Boolean call(Tuple2<LongWritable, Text> e) {
             return e._1.get() != 0;
-            }
         }
     };
 
-    public static PairFunction<String, Long, String> airportNamesKeyData =
-            new PairFunction<String, Long, String>() {
+    public static PairFunction<Tuple2<LongWritable, Text>, Long, String> airportNamesKeyData =
+            new PairFunction<Tuple2<LongWritable, Text>, Long, String>() {
         @Override
         public Tuple2<Long, String> call(String line) {
             String[] columns = StringTools.splitWithCommas(line);
