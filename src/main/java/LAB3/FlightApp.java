@@ -23,16 +23,8 @@ public class FlightApp {
         JavaPairRDD<LongWritable, Text> flightInfoRDD = sc.hadoopFile(args[0], TextInputFormat.class, LongWritable.class, Text.class);
         JavaPairRDD<LongWritable, Text> airportInfoRDD = sc.hadoopFile(args[1], TextInputFormat.class, LongWritable.class, Text.class);
         JavaPairRDD<Tuple2<Long, Long>, FlightData> flightInfoPairRDD = flightInfoRDD
-                .filter(AirportSparkFunctions.filterFunction)
-                .mapToPair(AirportSparkFunctions.airportFlightsKeyData);
-        JavaPairRDD<Long, String> airportInfoPairRDD =  airportInfoRDD
-                .filter(AirportSparkFunctions.filterFunction)
-                .mapToPair(AirportSparkFunctions.airportNamesKeyData);
-        JavaPairRDD<Tuple2<Long, Long> ,FlightData> reducedFlightInfo = flightInfoPairRDD
-                .reduceByKey(AirportSparkFunctions.airportFlightsUniqueKeyData);
-        final Broadcast<Map<Long, String>> airportInfoBroadcasted = sc.broadcast(airportInfoPairRDD.collectAsMap());
-        JavaPairRDD<String, String> result = reducedFlightInfo
-                .mapToPair(AirportSparkFunctions.getAirportResultData(airportInfoBroadcasted));
-        result.saveAsTextFile(args[2]);
+                .filter(AirportSparkFunctions.removeFirstLine)
+                .mapToPair(AirportSparkFunctions.parseFlightsFile);
+        
     }
 }
