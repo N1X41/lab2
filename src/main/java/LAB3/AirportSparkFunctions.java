@@ -56,4 +56,6 @@ public class AirportSparkFunctions {
             return new FlightData(newDelay, afc1 + afc2, dfc1 + dfc2, fc1 + fc2);
         }
     };
+
+    
 }
