@@ -10,6 +10,9 @@ import scala.Tuple2;
 
 public class FlightApp {
     private static final int AIRPORT_CODE_COLUMN_NUMBER = 0;
+    private static final int ORIGIN_AIRPORT_COLUMN_NUMBER = 11;
+    private static final int DEST_AIRPORT_COLUMN_NUMBER = 14;
+    private static final int DELAY_COLUMN_NUMBER = 18;
 
     public static void main(String[] args) {
         if (args.length != 3) {
@@ -31,7 +34,7 @@ public class FlightApp {
             @Override
             public Tuple2<Tuple2<LongWritable, LongWritable>, FlightData> call(String s) {
                 String[] colums = StringTools.splitWithCommas(line);
-                
+
             }
         };
 
