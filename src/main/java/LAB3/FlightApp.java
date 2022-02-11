@@ -53,7 +53,7 @@ public class FlightApp {
         JavaRDD<String> flightFileRDD = sc.textFile(args[0]);
         JavaRDD<String> airportFileRDD = sc.textFile(args[1]);
         JavaRDD<>flightInfoRDD = flightFileRDD.mapToPair(airportFlightsKeyData);
-        airportInfoRDD.mapToPair(airportNamesKeyData);
+        airportInfoRDD = airportFileRDD.mapToPair(airportNamesKeyData);
     }
 
 }
