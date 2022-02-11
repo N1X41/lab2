@@ -1,2 +1,5 @@
-package LAB3;public class FlightData {
+package LAB3;
+
+public class FlightData {
+    
 }
