@@ -21,12 +21,8 @@ public class AirportSparkFunctions {
 
     public AirportSparkFunctions(){}
 
-    public static Function<Tuple2<LongWritable, Text>, Boolean> filterFunction = new Function<Tuple2<LongWritable, Text>, Boolean>() {
-        @Override
-        public Boolean call(Tuple2<LongWritable, Text> e) {
-            return e._1.get() != 0;
-        }
-    };
+    public static Function<Tuple2<LongWritable, Text>, Boolean> removeFirstLine =
+            (Function<Tuple2<LongWritable, Text>, Boolean>) e -> e._1.get() != 0;
 
     public static PairFunction<Tuple2<LongWritable, Text>, Long, String> airportNamesKeyData =
             new PairFunction<Tuple2<LongWritable, Text>, Long, String>() {
