@@ -27,7 +27,12 @@ public class FlightApp {
             }
         };
 
-        PairFunction<String, Tuple2<LongWritable, LongWritable>, FlightData> airportFlightsKeyData = new
+        PairFunction<String, Tuple2<LongWritable, LongWritable>, FlightData> airportFlightsKeyData = new PairFunction<String, Tuple2<LongWritable, LongWritable>, FlightData>() {
+            @Override
+            public Tuple2<Tuple2<LongWritable, LongWritable>, FlightData> call(String s) throws Exception {
+                return null;
+            }
+        }
 
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
