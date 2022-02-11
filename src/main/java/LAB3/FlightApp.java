@@ -50,9 +50,9 @@ public class FlightApp {
 
         SparkConf conf = new SparkConf().setAppName("lab3");
         JavaSparkContext sc = new JavaSparkContext(conf);
-        JavaRDD<String> flightInfoRDD = sc.textFile(args[0]);
-        JavaRDD<String> airportInfoRDD = sc.textFile(args[1]);
-        flightInfoRDD = flightInfoRDD.mapToPair(airportFlightsKeyData);
+        JavaRDD<String> flightFileRDD = sc.textFile(args[0]);
+        JavaRDD<String> airportFileRDD = sc.textFile(args[1]);
+        JavaRDD<>flightInfoRDD = flightFileRDD.mapToPair(airportFlightsKeyData);
         airportInfoRDD.mapToPair(airportNamesKeyData);
     }
 
