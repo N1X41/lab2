@@ -82,7 +82,8 @@ public class FlightApp {
                 String destName = airportInfoBroadcasted.value().get(e._1._2).toString();
                 String key = originName + " -> " + destName;
                 String value = String.format("Delay: %f, Ratio: %.2f%%", e._2.getDelay(), e._2.getRatio());
-                
+
+                return new Tuple2<>(key, value);
             }
         };
 
