@@ -22,9 +22,9 @@ public class FlightApp {
             System.exit(-1);
         }
 
-        PairFunction<String, LongWritable, Text> airportNamesKeyData = new PairFunction<String, LongWritable, Text>{
+        PairFunction<String, LongWritable, Text> airportNamesKeyData = new PairFunction<String, LongWritable, Text>() {
             @Override
-            public Tuple2 call<LongWritable, Text> call(String line) {
+            public Tuple2<LongWritable, Text> call(String line) {
                 String[] columns = StringTools.splitWithCommas(line);
                 LongWritable airportCode = new LongWritable(Integer.parseInt(StringTools.removeQuotes(columns[AIRPORT_CODE_COLUMN_NUMBER])));
                 Text airportName = new Text(StringTools.concatWords(columns, 1, columns.length));
@@ -40,7 +40,7 @@ public class FlightApp {
                 Integer destAirportCode = Integer.parseInt(StringTools.removeQuotes(columns[DEST_AIRPORT_COLUMN_NUMBER]));
                 String delay = columns[DELAY_COLUMN_NUMBER];
                 if(!delay.isEmpty()){
-                    
+
                 }
             }
         };
