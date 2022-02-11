@@ -54,7 +54,7 @@ public class FlightApp {
 
         PairFunction<Tuple2<Tuple2<LongWritable, LongWritable>, FlightData>, String, String> airportResultData = new PairFunction<Tuple2<Tuple2<LongWritable, LongWritable>, FlightData>, String, String>() {
             @Override
-            public Tuple2<String, String> call(Tuple2<LongWritable, LongWritable> e){
+            public Tuple2<String, String> call(Tuple2<Tuple2<LongWritable, LongWritable>, FlightData>, e){
                 return null;
             }
         };
