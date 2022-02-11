@@ -41,8 +41,8 @@ public class AirportSparkFunctions {
         }
     };
 
-    public static PairFunction<String, Tuple2<Long, Long>, FlightData> airportFlightsKeyData =
-            new PairFunction<String, Tuple2<Long, Long>, FlightData>() {
+    public static PairFunction<Tuple2<LongWritable, Text>, Tuple2<Long, Long>, FlightData> airportFlightsKeyData =
+            new PairFunction<Tuple2<LongWritable, Text>, Tuple2<Long, Long>, FlightData>() {
         @Override
         public Tuple2<Tuple2<Long, Long>, FlightData> call(String line) {
             String[] columns = StringTools.splitWithCommas(line);
