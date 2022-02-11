@@ -72,7 +72,7 @@ public class FlightApp {
         JavaPairRDD<Tuple2<LongWritable, LongWritable>, FlightData> flightInfoPairRDD = flightInfoRDD.mapToPair(airportFlightsKeyData);
         JavaPairRDD<LongWritable, Text> airportInfoPairRDD = airportInfoRDD.mapToPair(airportNamesKeyData);
         JavaPairRDD<Tuple2<LongWritable, LongWritable> ,FlightData> reducedFlightInfo = flightInfoPairRDD.reduceByKey(airportFlightsUniqueKeyData);
-
         Broadcast<Map<LongWritable, Text>> airportInfoBroadcasted = sc.broadcast(airportInfoPairRDD.collectAsMap());
+        JavaPairRDD<String, String> result =
     }
 }
