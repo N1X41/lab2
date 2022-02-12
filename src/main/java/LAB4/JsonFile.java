@@ -1,20 +1,20 @@
 package LAB4;
 
 public class JsonFile {
-    private String packageId;
+    private String packageID;
     private String jsScript;
     private String functionName;
     private Test[] tests;
 
     public JsonFile(String packageId, String jsScript, String functionName, Test[] tests) {
-        this.packageId = packageId;
+        this.packageID = packageId;
         this.jsScript = jsScript;
         this.functionName = functionName;
         this.tests = tests;
     }
 
     public String getPackageId() {
-        return packageId;
+        return packageID;
     }
 
     public String getJsScript() {
@@ -30,7 +30,7 @@ public class JsonFile {
     }
 
     public void setPackageId(String packageId) {
-        this.packageId = packageId;
+        this.packageID = packageId;
     }
 
     public void setFunctionName(String functionName) {
