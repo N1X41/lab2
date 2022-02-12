@@ -2,6 +2,7 @@ package LAB4;
 
 import akka.actor.AbstractActor;
 
+import static akka.http.javadsl.server.Directives.path;
 import static akka.http.javadsl.server.Directives.route;
 
 public class RouteActor extends AbstractActor {
