@@ -58,7 +58,7 @@ public class HttpServer {
                                     if (result != null && result.getResults() != null) {
                                         return complete(StatusCodes.OK, result.getResults().toString());
                                     } else {
-                                        return complete(StatusCode.OK, )
+                                        return complete(StatusCode.OK, NO_PACKAGE_FOUND_MSG);
                                     }
                                 })
                         )
