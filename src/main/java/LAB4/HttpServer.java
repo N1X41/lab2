@@ -2,6 +2,7 @@ package LAB4;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;
 
@@ -13,6 +14,8 @@ public class HttpServer {
     private ActorRef route;
 
     public HttpServer(ActorSystem system) {
+        this.system = system;
+        route = this.system.actorOf(Props.create(RouteActor.class));
     }
 
     public Route getRoute() {
@@ -21,7 +24,7 @@ public class HttpServer {
                         route (
                                 post(() ->
                                         entity(Jackson.unmarshaller(JsonFile.class), file -> {
-
+                                            route.tell();
                                         })
                                 )
                         )
