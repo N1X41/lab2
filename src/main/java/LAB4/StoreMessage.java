@@ -1,2 +1,4 @@
-package LAB4;public class StoreMessage {
+package LAB4;
+
+public class StoreMessage {
 }
