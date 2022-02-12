@@ -21,7 +21,7 @@ public class TestingApp {
     public final static Logger LOGGER = Logger.getLogger("MyLog");
 
     public static void main(String[] args) throws Exception{
-        FileHandler fh;
+        FileHandler fh = new FileHandler(PATH_TO_LOG_FILE);
         LOGGER.addHandler(fh);
 
         ActorSystem system = ActorSystem.create("Testing");
