@@ -1,2 +1,4 @@
-package LAB4;public class ResultMessage {
+package LAB4;
+
+public class ResultMessage {
 }
