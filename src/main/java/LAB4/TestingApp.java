@@ -21,8 +21,8 @@ public class TestingApp {
     public final static Logger LOGGER = Logger.getLogger("MyLog");
 
     public static void main(String[] args) throws Exception{
+        LOGGER.addHandler(fh);
 
-        
         ActorSystem system = ActorSystem.create("Testing");
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
