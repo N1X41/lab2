@@ -50,7 +50,7 @@ public class HttpServer {
                                     try{
                                         result =
                                     } catch (Exception e){
-                                        
+
                                     }
                                 })
                         )
