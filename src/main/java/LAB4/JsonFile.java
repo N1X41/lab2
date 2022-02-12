@@ -10,6 +10,8 @@ public class JsonFile {
     private String functionName;
     private Test[] tests;
 
+    public JsonFile() {}
+
     @JsonCreator
     public JsonFile(@JsonProperty("packageID")String packageId,
                     @JsonProperty("packageId") String jsScript,
