@@ -1,2 +1,4 @@
-package LAB4;public class RouteActor {
+package LAB4;
+
+public class RouteActor {
 }
