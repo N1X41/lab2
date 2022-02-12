@@ -6,7 +6,6 @@ import akka.actor.Props;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.StatusCode;
 import akka.http.javadsl.server.Route;
-import akka.http.scaladsl.server.PathMatchers;
 
 import java.util.concurrent.Future;
 
