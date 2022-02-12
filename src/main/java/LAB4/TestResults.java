@@ -24,6 +24,11 @@ public class TestResults {
             Invocable invocable = (Invocable)engine;
             String result = invocable.invokeFunction(functionName, test.getParams()).toString();
             boolean isRight = result.equals(test.getExpectedResult());
+            if (isRight) {
+                System.out.printf(SUCCES_TEST_FORMAT,);
+            } else {
+                System.out.printf(FAIL_TEST_FORMAT,);
+            }
             results.put(test.getTestName(), isRight);
         }
     }
