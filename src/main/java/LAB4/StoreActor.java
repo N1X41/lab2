@@ -19,7 +19,10 @@ public class StoreActor extends AbstractActor {
             .match(StoreMessage.class, m -> {
                 storage.put(m.getPackageID(), m.getResults());
             })
-                .match(StoreMessage.class, m -> storage.put(m.getPackageID(), m.getResults()))
+                .match(StoreMessage.class, m -> {
+                    TestingApp.LOGGER.info();
+                    storage.put(m.getPackageID(), m.getResults());
+                })
                 .match(ResultMessage.class, m -> sender().tell(new StoreMessage(m.getPackageID(), storage.get(m.getPackageID())), self()))
                 .build();
     }
