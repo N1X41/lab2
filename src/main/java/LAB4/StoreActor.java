@@ -6,7 +6,7 @@ import akka.japi.pf.ReceiveBuilder;
 import java.util.HashMap;
 
 public class StoreActor extends AbstractActor {
-    private HashMap<String, TestResults> store;
+    private HashMap<String, TestResults> storage;
 
     @Override
     public Receive createReceive() {
