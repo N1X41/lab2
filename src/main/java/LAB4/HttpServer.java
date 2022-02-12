@@ -4,7 +4,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.marshallers.jackson.Jackson;
-import akka.http.javadsl.model.StatusCode;
+import akka.http.javadsl.model.StatusCodes;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akka.util.Timeout;
@@ -44,9 +44,9 @@ public class HttpServer {
                                                     file.getJsScript(),
                                                     file.getFunctionName(),
                                                     file.getTests()), ActorRef.noSender());
-                                            return complete(StatusCode.OK, String.format(PACKAGE_TEST_START_FORMAT, file.getPackageId()));
+                                            return complete(StatusCodes.OK, String.format(PACKAGE_TEST_START_FORMAT, file.getPackageId()));
                                         })))),
-                path (RUN_SEGMENT, () ->
+                path (RESULT_SEGMENT, () ->
                         route(
                                 get(() ->
                                         parameter(PACKAGE_ID_PARAMETR, packageID -> {

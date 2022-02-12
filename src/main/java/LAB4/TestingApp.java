@@ -9,6 +9,7 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import org.apache.log4j.BasicConfiguration;
 
 import java.util.concurrent.CompletionStage;
 import java.util.logging.FileHandler;
@@ -19,9 +20,10 @@ public class TestingApp {
     private static final int PORT = 1969;
     private static final String START_MSG_FORMAT = "Listening on %s:%d\n";
     public final static Logger LOGGER = Logger.getLogger("MyLog");
-    private static final String PATH_TO_LOG_FILE = "/home/nick/gitwatch/lab2/MyLog.log";
+    private static final String PATH_TO_LOG_FILE = "/home/nick/gitwatch/lab2/logs/log4.log";
 
     public static void main(String[] args) throws Exception{
+        BasicConfiguration.configure();
         FileHandler fh = new FileHandler(PATH_TO_LOG_FILE);
         LOGGER.addHandler(fh);
 
@@ -33,6 +35,7 @@ public class TestingApp {
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(routeFlow, ConnectHttp.toHost(IP_ADDRESS, PORT), materializer);
         LOGGER.info(String.format(START_MSG_FORMAT, IP_ADDRESS, PORT));
         System.in.read();
-        binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
+        binding.thenCompose(ServerBinding::unbind).
+                thenAccept(unbound -> system.terminate());
     }
 }

@@ -14,7 +14,7 @@ public class StoreMessage {
         return packageID;
     }
 
-    public TestResults getResults(){
+    public TestResults getResults() {
         return results;
     }
 
