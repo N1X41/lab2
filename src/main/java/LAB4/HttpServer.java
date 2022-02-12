@@ -11,4 +11,19 @@ public class HttpServer {
     public HttpServer(ActorSystem system) {
 
     }
+
+    public void createRoute() {
+        route (
+                path ( "run", () ->
+                        route (
+                                post(() ->
+                                        entity(Jackson.unmarshaller(JsonFile.class), file -> {
+
+                                        })
+                                )
+                        )
+
+                )
+        )
+    }
 }
