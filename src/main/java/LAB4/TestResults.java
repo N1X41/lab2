@@ -32,7 +32,7 @@ public class TestResults {
                 results.put(test.getTestName(), isRight);
             }
         } catch (Exception e){
-
+            System.out.printf(CODE_COMPILATION_ERROR_FORMAT, packageID, functionName, e.getMessage());
         }
     }
 
