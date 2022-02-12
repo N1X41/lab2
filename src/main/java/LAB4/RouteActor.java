@@ -6,6 +6,7 @@ import akka.japi.pf.ReceiveBuilder;
 
 public class RouteActor extends AbstractActor {
     private final static int POOL_SIZE = 2;
+    private ActorRef balanceActor;
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
