@@ -2,6 +2,7 @@ package LAB4;
 
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
+import akka.stream.ActorMaterializer;
 
 public class TestingApp {
     public static void main(String[] args){
