@@ -1,5 +1,6 @@
 package LAB4;
 
+import javax.script.Invocable;
 import java.util.HashMap;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
@@ -16,6 +17,7 @@ public class TestResults {
         for (Test test : tests){
             ScriptEngine engine = new ScriptEngineManager().getEngineByName(ENGINE_NAME);
             engine.eval(jsCode);
+            Invocable 
         }
     }
 }
