@@ -34,7 +34,11 @@ public class HttpServer {
                                                     file.getTests()), ActorRef.noSender());
                                             return complete(StatusCode.OK, String.format(PACKAGE_TEST_START_FORMAT, file.getPackageId()));
                                         })))),
-                path ("result" / PathMatchers.IntNumber$)
+                path ("result", () ->
+                        route(
+                                parameter("")
+                        )
+                )
         );
     }
 }
