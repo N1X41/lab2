@@ -9,6 +9,8 @@ import static akka.http.javadsl.server.Directives.*;
 import static akka.http.javadsl.server.Directives.entity;
 
 public class HttpServer {
+    private ActorSystem system;
+
     public HttpServer(ActorSystem system) {
 
     }
