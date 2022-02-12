@@ -9,5 +9,6 @@ public class RunActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(RunMessage.class, m -> {
                 })
+                .build();
     }
 }
