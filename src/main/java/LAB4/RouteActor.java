@@ -2,8 +2,8 @@ package LAB4;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
-import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
+import akka.stream.javadsl.Balance;
 
 public class RouteActor extends AbstractActor {
     private final static int POOL_SIZE = 2;
@@ -13,7 +13,7 @@ public class RouteActor extends AbstractActor {
 
     @Override
     public void preStart(){
-        balanceActor = getContext().actorOf(Props.create())
+        balanceActor = getContext().actorOf(new Balance)
     }
 
     @Override
