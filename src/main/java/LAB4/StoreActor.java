@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 public class StoreActor extends AbstractActor {
     private HashMap<String, TestResults> storage;
+    private static final String RUN_ACTOR_START_MSG_FORMAT = "PackageID: %s. Message: Starting running tests!\n";
 
     public StoreActor() {
         storage = new HashMap<>();
