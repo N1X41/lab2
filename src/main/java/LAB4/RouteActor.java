@@ -6,6 +6,7 @@ import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import akka.pattern.Patterns;
 import akka.routing.BalancingPool;
+import scala.concurrent.Future;
 
 public class RouteActor extends AbstractActor {
     private final static int POOL_SIZE = 2;
