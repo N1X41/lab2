@@ -30,7 +30,7 @@ public class HttpServer {
                                                     file.getJsScript(),
                                                     file.getFunctionName(),
                                                     file.getTests()), ActorRef.noSender());
-                                            return complete();
+                                            return complete(StatusCode.OK, );
                                         })
                                 )
                         )
