@@ -26,7 +26,7 @@ public class HttpServer {
 
     public Route getRoute() {
         route (
-                path ( "run", () ->
+                path ( RUN_SEGMENT, () ->
                         route (
                                 post(() ->
                                         entity(Jackson.unmarshaller(JsonFile.class), file -> {
@@ -37,9 +37,9 @@ public class HttpServer {
                                                     file.getTests()), ActorRef.noSender());
                                             return complete(StatusCode.OK, String.format(PACKAGE_TEST_START_FORMAT, file.getPackageId()));
                                         })))),
-                path ("result", () ->
+                path (RUN_SEGMENT, () ->
                         route(
-                                parameter("")
+                                parameter(PACKAGE_ID_PARAMETR)
                         )
                 )
         );
