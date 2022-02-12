@@ -11,7 +11,7 @@ public class JsonFile {
     private Test[] tests;
 
     @JsonCreator
-    public JsonFile(JsonProperty("packageID")String packageId, JsonProperty("packageId") String jsScript, String functionName, Test[] tests) {
+    public JsonFile(@JsonProperty("packageID")String packageId, @JsonProperty("packageId") String jsScript, String functionName, Test[] tests) {
         this.packageID = packageID;
         this.jsScript = jsScript;
         this.functionName = functionName;
