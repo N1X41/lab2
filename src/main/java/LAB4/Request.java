@@ -1,2 +1,4 @@
-package LAB4;public class Request {
+package LAB4;
+
+public class Request {
 }
