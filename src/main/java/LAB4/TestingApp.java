@@ -11,6 +11,7 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 import java.util.concurrent.CompletionStage;
+import java.util.logging.Logger;
 
 public class TestingApp {
     private static final String IP_ADDRESS = "localhost";
