@@ -32,7 +32,7 @@ public class TestResults {
                 if (isRight) {
                     TestingApp.LOGGER.info(String.format(SUCCES_TEST_FORMAT,packageID, functionName, test.getTestName()));
                 } else {
-                    System.out.printf(FAIL_TEST_FORMAT, packageID, functionName, test.getTestName(), test.getExpectedResult(), result);
+                    TestingApp.LOGGER.info(String.format(FAIL_TEST_FORMAT, packageID, functionName, test.getTestName(), test.getExpectedResult(), result));
                 }
                 results.put(test.getTestName(), isRight);
             }
