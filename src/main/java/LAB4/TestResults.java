@@ -9,7 +9,7 @@ public class TestResults {
     private HashMap<String, Boolean> results;
     private static final String ENGINE_NAME = "nashorn";
     private static final String SUCCES_TEST_FORMAT = "PackageID: %s, Test: %s passed!";
-    private static final String FAIL_TEST_FORMAT = "";
+    private static final String FAIL_TEST_FORMAT = "PackageID: %s, Test: %s failed! Expected result: %s, result: %s";
 
 
 
