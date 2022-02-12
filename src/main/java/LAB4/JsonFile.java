@@ -10,8 +10,9 @@ public static class JsonFile {
     private String functionName;
     private Test[] tests;
 
-    @JsonCreator
-    public JsonFile(@JsonProperty("packageID")String packageId, @JsonProperty("packageId") String jsScript, @JsonProperty("functionName") String functionName, @JsonProperty("tests") Test[] tests) {
+    //@JsonCreator
+    //public JsonFile(@JsonProperty("packageID")String packageId, @JsonProperty("packageId") String jsScript, @JsonProperty("functionName") String functionName, @JsonProperty("tests") Test[] tests) {
+    public JsonFile(String packageId, String jsScript, String functionName, Test[] tests) {
         this.packageID = packageID;
         this.jsScript = jsScript;
         this.functionName = functionName;
