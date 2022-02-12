@@ -4,6 +4,7 @@ import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
 public class RunActor extends AbstractActor {
+    private static final String RUN_ACTOR_START_MSG_FORMAT = "PackageID: %s. Message: Starting running tests!\n";
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
