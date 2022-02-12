@@ -13,4 +13,19 @@ public class Request {
         this.tests = tests;
     }
 
+    public String getPackageId() {
+        return packageId;
+    }
+
+    public String getJsScript() {
+        return jsScript;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
+
+    public Test[] getTests() {
+        return tests;
+    }
 }
