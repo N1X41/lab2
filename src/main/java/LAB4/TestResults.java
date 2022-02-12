@@ -25,9 +25,9 @@ public class TestResults {
                 String result = invocable.invokeFunction(functionName, test.getParams()).toString();
                 boolean isRight = result.equals(test.getExpectedResult());
                 if (isRight) {
-                    System.out.printf(SUCCES_TEST_FORMAT, packageID, test.getTestName());
+                    System.out.printf(SUCCES_TEST_FORMAT, packageID, functionName, test.getTestName());
                 } else {
-                    System.out.printf(FAIL_TEST_FORMAT, packageID, test.getTestName(), test.getExpectedResult(), result);
+                    System.out.printf(FAIL_TEST_FORMAT, packageID, functionName, test.getTestName(), test.getExpectedResult(), result);
                 }
                 results.put(test.getTestName(), isRight);
             }
