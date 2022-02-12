@@ -1,8 +1,12 @@
 LAB2/GroupComparator.class
+LAB3/StringTools.class
+LAB3/FlightApp.class
 LAB2/FlightJoinMapper.class
 LAB2/JoinReducer.class
 LAB2/IdPartitioner.class
+LAB3/FlightData.class
 LAB2/StringTools.class
 LAB2/DataJoinApp.class
 LAB2/AirportJoinMapper.class
 LAB2/IDKey.class
+LAB3/AirportSparkFunctions.class

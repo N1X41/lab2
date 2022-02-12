@@ -3,11 +3,10 @@ package LAB3;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.TextInputFormat;
-import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.broadcast.Broadcast;
-import scala.Tuple2;
 
 import java.util.Map;
 
@@ -22,7 +21,7 @@ public class FlightApp {
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaPairRDD<LongWritable, Text> flightInfoRDD = sc.hadoopFile(args[0], TextInputFormat.class, LongWritable.class, Text.class);
         JavaPairRDD<LongWritable, Text> airportInfoRDD = sc.hadoopFile(args[1], TextInputFormat.class, LongWritable.class, Text.class);
-        JavaPairRDD<Long, String> airportInfoPairRDD = airportInfoRDD
+        JavaPairRDD<Long, String> airportInfoPairRDD =  airportInfoRDD
                 .filter(AirportSparkFunctions.removeFirstLine)
                 .mapToPair(AirportSparkFunctions.parseAirportFile);
         final Broadcast<Map<Long, String>> airportInfoBroadcasted = sc.broadcast(airportInfoPairRDD.collectAsMap());
