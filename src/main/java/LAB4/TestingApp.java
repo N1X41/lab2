@@ -6,8 +6,9 @@ import akka.http.javadsl.Http;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
-import akka.stream.CompletionStrategy;
 import akka.stream.javadsl.Flow;
+
+import java.util.concurrent.CompletionStage;
 
 public class TestingApp {
     public static void main(String[] args){
@@ -16,6 +17,6 @@ public class TestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         HttpServer server = new HttpServer(system);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = server.getRoute().flow(system, materializer);
-        
+
     }
 }
