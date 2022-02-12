@@ -10,7 +10,7 @@ public class TestResults {
     private static final String ENGINE_NAME = "nashorn";
     private static final String SUCCES_TEST_FORMAT = "PackageID: %s, Function Name: %s, Test: %s passed!\n";
     private static final String FAIL_TEST_FORMAT = "PackageID: %s, Function Name: %s, Test: %s failed! Expected result: %s, result: %s\n";
-    private static final String CODE_COMPILATION_ERROR_FORMAT = "PackageID: %s, FunctionName: %s, Test: %s failed to compile code!\n";
+    private static final String CODE_COMPILATION_ERROR_FORMAT = "PackageID: %s, FunctionName: %s failed to compile code! Message: %s\n";
 
     public TestResults(){
         results = new HashMap<>();
@@ -32,7 +32,7 @@ public class TestResults {
                 results.put(test.getTestName(), isRight);
             }
         } catch (Exception e){
-            
+
         }
     }
 
