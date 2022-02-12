@@ -13,7 +13,6 @@ public class HttpServer {
     private ActorRef route;
 
     public HttpServer(ActorSystem system) {
-
     }
 
     public Route getRoute() {
