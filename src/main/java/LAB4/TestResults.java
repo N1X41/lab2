@@ -41,6 +41,12 @@ public class TestResults {
         }
     }
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        results.forEach((k,v) -> builder.append());
+    }
+
     public HashMap<String, Boolean> getResults() {
         return results;
     }
