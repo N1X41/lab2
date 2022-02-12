@@ -6,6 +6,7 @@ import akka.japi.pf.ReceiveBuilder;
 public class RunActor extends AbstractActor {
     @Override
     public Receive createReceive() {
-        return null;
+        return ReceiveBuilder.create()
+                .match()
     }
 }
