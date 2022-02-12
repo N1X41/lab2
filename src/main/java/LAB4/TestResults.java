@@ -27,7 +27,7 @@ public class TestResults {
             if (isRight) {
                 System.out.printf(SUCCES_TEST_FORMAT,packageID, test.getTestName());
             } else {
-                System.out.printf(FAIL_TEST_FORMAT,);
+                System.out.printf(FAIL_TEST_FORMAT,packageID, test.getTestName(), test.getExpectedResult(), result);
             }
             results.put(test.getTestName(), isRight);
         }
