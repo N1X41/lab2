@@ -1,2 +1,4 @@
-package LAB4;public class StoreActor {
+package LAB4;
+
+public class StoreActor {
 }
