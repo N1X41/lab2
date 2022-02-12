@@ -19,10 +19,12 @@ public class JsonFile {
     }
 
     public String getPackageId() {
+
         return packageID;
     }
 
     public String getJsScript() {
+
         return jsScript;
     }
 
@@ -31,22 +33,27 @@ public class JsonFile {
     }
 
     public Test[] getTests() {
+
         return tests;
     }
 
     public void setPackageId(String packageId) {
+
         this.packageID = packageId;
     }
 
     public void setFunctionName(String functionName) {
+
         this.functionName = functionName;
     }
 
     public void setJsScript(String jsScript) {
+
         this.jsScript = jsScript;
     }
 
     public void setTests(Test[] tests) {
+
         this.tests = tests;
     }
 }
