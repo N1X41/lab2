@@ -6,7 +6,8 @@ import akka.http.javadsl.Http;
 public class TestingApp {
     public static void main(String[] args){
         ActorSystem system = ActorSystem.create("Testing");
-
         final Http http = Http.get(system);
+        final ActorMaterializer materializer = ActorMaterializer.create(system);
+        
     }
 }
