@@ -6,6 +6,6 @@ import akka.japi.pf.ReceiveBuilder;
 public class RouteActor extends AbstractActor {
     @Override
     public Receive createReceive() {
-        return null;
+        return ReceiveBuilder.create()
     }
 }
