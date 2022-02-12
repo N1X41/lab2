@@ -37,7 +37,7 @@ public class TestResults {
                 results.put(test.getTestName(), isRight);
             }
         } catch (Exception e){
-            System.out.printf(CODE_COMPILATION_ERROR_FORMAT, packageID, functionName, functionName, e.getMessage());
+            TestingApp.LOGGER.info(String.format(CODE_COMPILATION_ERROR_FORMAT, packageID, functionName, functionName, e.getMessage()));
         }
     }
 
