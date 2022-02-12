@@ -26,7 +26,7 @@ public class HttpServer {
 
     public Route getRoute() {
         route (
-                path ( RUN_SEGMENT, () ->
+                path (RUN_SEGMENT, () ->
                         route (
                                 post(() ->
                                         entity(Jackson.unmarshaller(JsonFile.class), file -> {
@@ -40,7 +40,6 @@ public class HttpServer {
                 path (RUN_SEGMENT, () ->
                         route(
                                 parameter(PACKAGE_ID_PARAMETR, packageID ->{
-
                                 })
                         )
                 )
