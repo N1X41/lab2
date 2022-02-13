@@ -12,7 +12,7 @@ import java.util.concurrent.CompletionStage;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
-public class AnonymRequestApp {
+public class AnonymRequestsApp {
     private final static String PATH_TO_LOG_FILE = "/home/nick/gitwatch/lab2/logs/lab6.log";
     public static final String HOST = "localhost";
     private static int PORT;
