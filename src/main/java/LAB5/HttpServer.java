@@ -29,7 +29,7 @@ public class HttpServer {
     private static final String COUNT_ARG = "count";
     private static final String INFO_MSG_PTR = "%s - %d\n";
     private static final String TIME_RESPONSE_PTR = "Response's Time = %d\n";
-    
+    private static final String AVG_RESPONSE_TIME_PTR = "----Average resonse time = %d!----\n";
     private static final int MAP_ASYNC = 1;
     private static final Duration TIMEOUT = Duration.ofSeconds(5);
 
