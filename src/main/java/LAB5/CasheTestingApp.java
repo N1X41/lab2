@@ -32,5 +32,6 @@ public class CasheTestingApp {
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost()
+        )
     }
 }
