@@ -15,7 +15,14 @@ public class ZooKeeperConn {
         if (watchedEvent.getType() == Watcher.Event.EventType.NodeCreated ||
                 watchedEvent.getType() == Watcher.Event.EventType.NodeDeleted ||
                 watchedEvent.getType() == Watcher.Event.EventType.NodeDataChanged){
-            
+            List<String> servers = Collections.emptyList();
+            try {
+                for (String s : keeper.getChildren("/servers", null)) {
+
+                }
+            } catch (KeeperException | InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     };
 
