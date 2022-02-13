@@ -12,9 +12,11 @@ public class HttpServer {
     private static final String URL_ARG = "url";
     private static final String COUNT_ARG = "count";
     private Http http;
+    private ActorRef actor;
 
-    public HttpServer(Http http) {
+    public HttpServer(Http http, ActorRef actor) {
         this.http = http;
+        this.actor = actor;
     }
 
     public Route createRoute() {
