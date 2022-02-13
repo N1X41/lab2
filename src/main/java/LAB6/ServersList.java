@@ -2,7 +2,7 @@ package LAB6;
 
 import java.util.List;
 
-public class ServerList {
+public class ServersList {
     private final List<String> servers;
 
     public ServersList(List<String> servers) {
