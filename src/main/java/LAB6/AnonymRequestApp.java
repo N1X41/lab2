@@ -21,5 +21,6 @@ public class AnonymRequestApp {
         ActorSystem system = ActorSystem.create("routes");
         ActorRef actor = system.actorOf(Props.create(RouteActor.class));
         final Http http = Http.get(system);
+        final ActorMaterializer materializer = ActorMaterializer.create(system);
     }
 }
