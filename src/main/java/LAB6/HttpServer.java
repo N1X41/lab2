@@ -26,7 +26,7 @@ public class HttpServer {
                             if (Integer.parseInt(count) <= 0){
                                 return completeWithFuture(http.singleRequest(HttpRequest.create(url)));
                             }
-                            return completeWithFuture(Patterns.ask(actor, new Server()))
+                            return completeWithFuture(Patterns.ask(actor, new Server(url)))
                         }))));
     }
 }
