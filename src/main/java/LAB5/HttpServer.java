@@ -28,13 +28,15 @@ public class HttpServer {
     public static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(Http http, ActorSystem system,
                                                                       ActorMaterializer materializer, ActorRef actor) {
         return Flow.of(HttpRequest.class)
-                .map((r) -> {
+                .map(r -> {
                     Query query = r.getUri().query();
                     String url = query.get(URL_ARG).get();
                     int count = Integer.parseInt(query.get(COUNT_ARG).get());
                     LOGGER.info(String.format(INFO_MSG_PTR, url, count));
                     return new Pair<String, Integer>(url, count);
                 })
-                .mapAsync(MAP_ASYNC)
+                .mapAsync(MAP_ASYNC, r ->{
+                    CompletionStage<Object> stage = Patterns.ask(actor, nwwww)
+                })
     }
 }
