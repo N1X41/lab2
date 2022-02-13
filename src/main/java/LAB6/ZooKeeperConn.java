@@ -10,7 +10,9 @@ public class ZooKeeperConn {
     private ZooKeeper keeper;
 
     public static Watcher watcher = watchedEvent -> {
-        if (watchedEvent.getType() == Watcher.Event){
+        if (watchedEvent.getType() == Watcher.Event.EventType.NodeCreated ||
+                watchedEvent.getType() == Watcher.Event.EventType.NodeDeleted ||
+                watchedEvent.getType() == Watcher.Event.EventType.NodeDataChanged){
             
         }
     };
