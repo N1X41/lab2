@@ -10,6 +10,8 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
+import static LAB5.CacheTestingApp.LOGGER;
+
 public class HttpServer {
     private static final String URL_ARG = "testUrl";
     private static final String COUNT_ARG = "count";
