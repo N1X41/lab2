@@ -9,6 +9,7 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import scala.concurrent.java8.FuturesConvertersImpl;
 
 import java.util.concurrent.CompletionStage;
 import java.util.logging.FileHandler;
@@ -17,8 +18,8 @@ import java.util.logging.Logger;
 public class CasheTestingApp {
     private static final String PATH_TO_LOG_FILE = "/home/nick/gitwatch/lab2/logs/log5.log";
     public final static Logger LOGGER = Logger.getLogger("MyLog");
-    private static final String IP = "localhost";
-    private static final int HOST = 1996;
+    private static final String HOST = "localhost";
+    private static final int PORT = 1996;
 
     public static void main(String[] args) throws Exception {
         FileHandler fh = new FileHandler(PATH_TO_LOG_FILE);
@@ -31,10 +32,10 @@ public class CasheTestingApp {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow;
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost(HOST, HOST),
+                ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
-        LOGGER.info("Server online at http://" + HOST + ":" + HOST + "\n Press any button to stop...");
+        LOGGER.info("Server online at http://" + HOST + ":" + PORT + "\n Press any button to stop...");
         System.in.read();
         binding.thenCompose(ServerBinding::unbind)
                 .thenAccept(unbound -> system.terminate());
