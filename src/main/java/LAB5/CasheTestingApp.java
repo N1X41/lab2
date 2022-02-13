@@ -31,10 +31,10 @@ public class CasheTestingApp {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow;
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost(IP, HOST),
+                ConnectHttp.toHost(HOST, HOST),
                 materializer
         );
-        LOGGER.info("Server online at http://" + IP + ":" + HOST + "\n Press any button to stop...");
+        LOGGER.info("Server online at http://" + HOST + ":" + HOST + "\n Press any button to stop...");
         System.in.read();
         binding.thenCompose(ServerBinding::unbind)
                 .thenAccept(unbound -> system.terminate());
