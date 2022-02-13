@@ -6,6 +6,7 @@ import akka.actor.Props;
 import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
+import akka.http.javadsl.model.HttpRequest;
 import akka.stream.ActorMaterializer;
 
 import java.util.concurrent.CompletionStage;
