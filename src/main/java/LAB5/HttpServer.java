@@ -11,6 +11,7 @@ import akka.pattern.Patterns;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
+import akka.util.Timeout;
 
 import static LAB5.CacheTestingApp.LOGGER;
 
