@@ -20,6 +20,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 import static LAB5.CacheTestingApp.LOGGER;
+import static org.asynchttpclient.Dsl.asyncHttpClient;
 
 public class HttpServer {
     private static final String URL_ARG = "testUrl";
