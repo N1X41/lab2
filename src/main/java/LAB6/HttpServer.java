@@ -11,5 +11,6 @@ public class HttpServer {
     public HttpServer() {}
 
     public static Route createRoute() {
+        return route()
     }
 }
