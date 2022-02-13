@@ -6,6 +6,8 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.Http;
 import akka.pattern.Patterns;
 
+import java.time.Duration;
+
 import static akka.http.javadsl.server.Directives.*;
 
 public class HttpServer {
