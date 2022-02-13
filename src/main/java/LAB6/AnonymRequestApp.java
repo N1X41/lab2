@@ -1,6 +1,6 @@
 package LAB6;
 
-
+import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
 public class AnonymRequestApp {
