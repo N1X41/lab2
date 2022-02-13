@@ -11,7 +11,7 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 public class HttpServer {
-    private static final String URL_ARG = "testU";
+    private static final String URL_ARG = "testUrl";
 
     public static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(Http http, ActorSystem system,
                                                                       ActorMaterializer materializer, ActorRef actor) {
