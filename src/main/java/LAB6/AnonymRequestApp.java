@@ -8,7 +8,6 @@ import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
 import akka.stream.ActorMaterializer;
 
-
 import java.util.concurrent.CompletionStage;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
