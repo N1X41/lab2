@@ -1,2 +1,4 @@
-package LAB5;public class CasheTestingApp {
+package LAB5;
+
+public class CasheTestingApp {
 }
