@@ -1,2 +1,4 @@
-package LAB5;public class gfu {
+package LAB5;
+
+public class gfu {
 }
