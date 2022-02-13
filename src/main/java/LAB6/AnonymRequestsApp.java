@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class AnonymRequestsApp {
     private final static String PATH_TO_LOG_FILE = "/home/nick/gitwatch/lab2/logs/lab6.log";
     public static final String HOST = "localhost";
-    private static int PORT;
+    public static int PORT;
     public final static Logger LOGGER = Logger.getLogger("MyLog");
 
     public static void main(String[] args) throws Exception{
