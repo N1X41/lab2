@@ -56,7 +56,6 @@ public class HttpServer {
                                     long finish = System.currentTimeMillis();
                                     return CompletableFuture.completedFuture((int) (finish - start));
                                 });
-                    })
                 })
     }
 }
