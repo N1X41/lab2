@@ -10,4 +10,8 @@ import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 
 public class HttpServer {
+    public static Flow<HttpRequest, HttpResponse, NotUsed> createFlow(Http http, ActorSystem system,
+                                                                      ActorMaterializer materializer, ActorRef actor) {
+
+    }
 }
