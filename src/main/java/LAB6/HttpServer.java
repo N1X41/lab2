@@ -14,6 +14,8 @@ public class HttpServer {
     private static final String URL_ARG = "url";
     private static final String COUNT_ARG = "count";
     private static final String URL_ADDRES_PTR = "http://%s:%s?url=%s&count=%d";
+    private static final String SEND_REQUEST_PTR = "Sending request to http://%s:%s?url=%s&count=%d";
+    private static final String FINISH_REQUEST_PTR = "Finished with %s";
     private static final Duration TIMEOUT = Duration.ofSeconds(5);
     private Http http;
     private ActorRef actor;
