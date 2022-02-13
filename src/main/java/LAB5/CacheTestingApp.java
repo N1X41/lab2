@@ -9,13 +9,12 @@ import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
-import scala.concurrent.java8.FuturesConvertersImpl;
 
 import java.util.concurrent.CompletionStage;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 
-public class CasheTestingApp {
+public class CacheTestingApp {
     private static final String PATH_TO_LOG_FILE = "/home/nick/gitwatch/lab2/logs/log5.log";
     public final static Logger LOGGER = Logger.getLogger("MyLog");
     private static final String HOST = "localhost";
