@@ -1,2 +1,4 @@
-package LAB6;public class ZooKeeperConn {
+package LAB6;
+
+public class ZooKeeperConn {
 }
