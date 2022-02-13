@@ -12,8 +12,6 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import org.apache.log4j.BasicConfigurator;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
 import java.util.concurrent.CompletionStage;
@@ -22,7 +20,7 @@ import java.util.logging.Logger;
 
 public class AnonymRequestsApp {
     private final static String PATH_TO_LOG_FILE = "/home/nick/gitwatch/lab2/logs/lab6.log";
-    private static final String ZOOKEEPER_HOST = "localhost:2181";
+    private static final String ZOOKEEPER_HOST = "127.0.0.1:2181";
     public static final String HOST = "localhost";
     public static int PORT;
     public final static Logger LOGGER = Logger.getLogger("MyLog");
@@ -38,16 +36,10 @@ public class AnonymRequestsApp {
         ActorRef actor = system.actorOf(Props.create(RouteActor.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
 
-        Watcher empty = new Watcher() {
-            @Override
-            public void process(WatchedEvent watchedEvent) {
-            }
-        };
-        ZooKeeper zoo = new ZooKeeper(ZOOKEEPER_HOST, 2500, empty);
+        ZooKeeper zoo = new ZooKeeper(ZOOKEEPER_HOST, 2500, null);
         final Http http = Http.get(system);
         ZooKeeperConn conn = new ZooKeeperConn(zoo, actor);
         conn.createConnection(HOST, String.valueOf(PORT));
-
         HttpServer server = new HttpServer(http, actor);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = server.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
