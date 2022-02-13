@@ -31,7 +31,7 @@ public class CacheTestingApp {
         ActorRef actor = system.actorOf(Props.create(RouteActor.class));
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = HttpServer.createFlow(http, system, meterializer, actor);
+        final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = HttpServer.createFlow(http, system, materializer, actor);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
                 ConnectHttp.toHost(HOST, PORT),
