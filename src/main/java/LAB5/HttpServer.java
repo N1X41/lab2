@@ -38,12 +38,12 @@ public class HttpServer {
                     LOGGER.info(String.format(INFO_MSG_PTR, url, count));
                     return new Pair<String, Integer>(url, count);
                 })
-                .mapAsync(MAP_ASYNC, r ->{
+                .mapAsync(MAP_ASYNC, r -> {
                     CompletionStage<Object> stage = Patterns.ask(actor, new GetMessage(r.first()), TIMEOUT);
                     return stage.thenCompose(res -> {
-                        if ((int)res >= 0) {
-                            return CompletableFuture.completedFuture(new Pair<>(r.first(), ((int)res)));
-                    }
+                        if ((int) res >= 0) {
+                            return CompletableFuture.completedFuture(new Pair<>(r.first(), ((int) res)));
+                        }
                         Flow<Pair<String, Integer>, Integer, NotUsed> flow = Flow.<Pair<String, Integer>>create()
                                 .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.second(), p.first())))
                                 .mapAsync(r.second(), url -> {
@@ -51,6 +51,7 @@ public class HttpServer {
                                     long finish = System.currentTimeMillis();
                                     return CompletableFuture.completedFuture((int) (finish - start));
                                 });
+                    })
                 })
     }
 }
