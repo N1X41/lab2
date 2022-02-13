@@ -1,4 +1,4 @@
 package LAB5;
 
-public class CasheTestingApp {
+public class CasheTestingApp {гит вотч ужасен, да
 }
