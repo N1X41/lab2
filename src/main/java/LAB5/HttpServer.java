@@ -36,7 +36,7 @@ public class HttpServer {
                     return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync(MAP_ASYNC, r ->{
-                    CompletionStage<Object> stage = Patterns.ask(actor, new GetMessage(r.first()))
+                    CompletionStage<Object> stage = Patterns.ask(actor, new GetMessage(r.first()), Duration.ofSeconds())
                 })
     }
 }
