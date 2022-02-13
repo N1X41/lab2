@@ -49,7 +49,7 @@ public class HttpServer {
                                 .mapConcat(p -> new ArrayList<>(Collections.nCopies(p.second(), p.first())))
                                 .mapAsync(r.second(), url -> {
                                     long start = System.currentTimeMillis();
-                                    asyncHttpClient()
+                                    asyncHttpClient().prepareGet(url).execute();
                                     long finish = System.currentTimeMillis();
                                     return CompletableFuture.completedFuture((int) (finish - start));
                                 });
