@@ -6,7 +6,7 @@ import akka.actor.ActorRef;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-import LAB6.AnonymRequestsApp.LOGGER;
+import static LAB6.AnonymRequestsApp.LOGGER;
 
 public class ZooKeeperConn implements Watcher {
     final private static String SERVERS = "/servers";
