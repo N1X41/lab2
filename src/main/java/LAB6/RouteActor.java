@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class RouteActor extends AbstractActor{
     private List<String> servers = Collections.emptyList();
-    
+    Random random = new Random();
 
     @Override
     public Receive createReceive() {
