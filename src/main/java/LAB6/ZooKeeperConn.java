@@ -2,6 +2,7 @@ package LAB6;
 
 import org.apache.zookeeper.*;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class ZooKeeperConn {
