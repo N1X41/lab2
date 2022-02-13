@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Collections;
 
 public class RouteActor extends AbstractActor{
-    
+    private List<String> servers = Collections.emptyList();
 
     @Override
     public Receive createReceive() {
