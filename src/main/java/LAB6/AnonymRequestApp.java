@@ -15,10 +15,11 @@ import java.util.logging.Logger;
 public class AnonymRequestApp {
     private final static String PATH_TO_LOG_FILE = "/home/nick/gitwatch/lab2/logs/lab6.log";
     private static final String HOST = "localhost";
-    private static final int PORT = 1996;
+    private static int PORT;
     public final static Logger LOGGER = Logger.getLogger("MyLog");
 
     public static void main(String[] args) throws Exception{
+        PORT = Integer.parseInt(args[0]);
         FileHandler fh = new FileHandler(PATH_TO_LOG_FILE);
         LOGGER.addHandler(fh);
 
