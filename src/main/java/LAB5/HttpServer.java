@@ -56,6 +56,12 @@ public class HttpServer {
                                     long finish = System.currentTimeMillis();
                                     return CompletableFuture.completedFuture((int) (finish - start));
                                 });
+                        return Source.single(r)
+                                .via(flow)
+                                .toMat(Sink.fold(0, Integer::sum), Keep.right())
+                                .run(materializer)
+                                .thenApply(sum -> new Pair<>(r.first(), (sum / r.second())));
+                    });
                 })
     }
 }
