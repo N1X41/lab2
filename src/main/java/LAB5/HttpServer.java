@@ -26,6 +26,7 @@ public class HttpServer {
                     String url = query.get(URL_ARG).get();
                     int count = Integer.parseInt(query.get(COUNT_ARG).get());
                     LOGGER.info(String.format(INFO_MSG_PTR, url, count));
+                    return new Pair<String, Integer>(url, count);
                 })
                 .mapAsync()
     }
