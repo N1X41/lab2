@@ -15,7 +15,9 @@ public class HttpServer {
                                                                       ActorMaterializer materializer, ActorRef actor) {
         return Flow.of(HttpRequest.class)
                 .map((r) -> {
-
+                    Query query = r.getUri().query();
+                    String url = query.get().get();
                 })
+                .mapAsync()
     }
 }
