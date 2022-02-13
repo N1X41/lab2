@@ -1,2 +1,4 @@
-package LAB6;public class AnonymRequestApp {
+package LAB6;
+
+public class AnonymRequestApp {
 }
