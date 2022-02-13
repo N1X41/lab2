@@ -3,6 +3,7 @@ package LAB5;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
+import LAB4.StoreActor;
 
 import java.util.HashMap;
 
@@ -14,6 +15,6 @@ public class RouteActor extends AbstractActor{
         return ReceiveBuilder
                 .create()
                 .match(GetMessage.class, msg -> getSender().tell(storage.getOrDefault(msg.getUrl(), -1), ActorRef.noSender()))
-                .match();
+                .match(StoreMessage.class, msg ->);
     }
 }
