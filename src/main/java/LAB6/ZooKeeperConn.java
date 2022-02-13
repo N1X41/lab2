@@ -1,6 +1,6 @@
 package LAB6;
 
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
 
 import java.time.Duration;
 
