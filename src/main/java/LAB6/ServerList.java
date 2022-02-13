@@ -1,6 +1,6 @@
 package LAB6;
 
-
+import java.util.List;
 
 public class ServerList {
     private final List<String> servers;
