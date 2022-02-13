@@ -1,4 +1,7 @@
 package LAB5;
 
-public class CasheTestingApp {гит вотч ужасен, да
+public class CasheTestingApp {
+    public static void main(String[] args) throws Exception {
+
+    }
 }
