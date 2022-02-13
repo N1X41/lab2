@@ -18,7 +18,8 @@ public class HttpServer {
         return Flow.of(HttpRequest.class)
                 .map((r) -> {
                     Query query = r.getUri().query();
-                    String url = query.get().get();
+                    String url = query.get(URL_ARG).get();
+                    int count = Integer.parseInt()
                 })
                 .mapAsync()
     }
