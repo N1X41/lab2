@@ -24,7 +24,7 @@ public class CacheTestingApp {
     private static final int PORT = 1996;
 
     public static void main(String[] args) throws Exception {
-        Ba
+        BasicConfigurator.configure();
         FileHandler fh = new FileHandler(PATH_TO_LOG_FILE);
         LOGGER.addHandler(fh);
 
