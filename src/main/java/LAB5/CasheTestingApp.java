@@ -17,6 +17,8 @@ import java.util.logging.Logger;
 public class CasheTestingApp {
     private static final String PATH_TO_LOG_FILE = "/home/nick/gitwatch/lab2/logs/log5.log";
     public final static Logger LOGGER = Logger.getLogger("MyLog");
+    private static final String IP = "localhost";
+    private static final int HOST = 1996;
 
     public static void main(String[] args) throws Exception {
         FileHandler fh = new FileHandler(PATH_TO_LOG_FILE);
