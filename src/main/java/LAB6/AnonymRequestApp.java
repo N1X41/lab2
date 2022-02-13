@@ -20,5 +20,6 @@ public class AnonymRequestApp {
         LOGGER.info("start!");
         ActorSystem system = ActorSystem.create("routes");
         ActorRef actor = system.actorOf(Props.create(RouteActor.class));
+        final Http http = Http.get(system);
     }
 }
