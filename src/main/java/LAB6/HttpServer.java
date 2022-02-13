@@ -8,7 +8,7 @@ import akka.pattern.Patterns;
 
 import java.time.Duration;
 
-import static ru.bmstu.lab6.AnonymRequestsApp.LOGGER;
+
 import static akka.http.javadsl.server.Directives.*;
 
 public class HttpServer {
