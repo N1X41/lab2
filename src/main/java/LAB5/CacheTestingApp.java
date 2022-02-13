@@ -27,6 +27,7 @@ public class CacheTestingApp {
 
         LOGGER.info("start!");
         ActorSystem system = ActorSystem.create("routes");
+        
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = HttpServer.createFlow(http, system, meterializer, );
