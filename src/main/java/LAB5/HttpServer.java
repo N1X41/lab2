@@ -57,6 +57,8 @@ public class HttpServer {
                                     long start = System.currentTimeMillis();
                                     asyncHttpClient().prepareGet(url).execute();
                                     long finish = System.currentTimeMillis();
+                                    long time = finish - start;
+                                    LOGGER.info(time);
                                     return CompletableFuture.completedFuture((int) (finish - start));
                                 });
                         return Source.single(r)
